@@ -2,6 +2,7 @@
 Reddit Clone to practice React, Redux, Git, and other technologies
 
 ## Wireframes
+This project is based off the RedditMinimal example provided by Codecademy at https://reddit-client.netlify.app
 
 ## Technologies Used
 * HTML
@@ -17,6 +18,4 @@ Reddit Clone to practice React, Redux, Git, and other technologies
 ## Features
 
 ## Future Work
-Visualize your end result. What is it built with? What can it do? Make sure that it satisfies all of the project objectives.
-
-Make a timeline for yourself and avoid the temptation to build things that aren’t required. Setting firm boundaries and deadlines will keep you on track and prevent scope creep.
+On your computer, create the files needed for your React application. Run your application locally to see what it looks like in the browser.
