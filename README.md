@@ -16,6 +16,17 @@ This project is based off the RedditMinimal example provided by Codecademy at ht
 * Wireframing
 
 ## Features
+* Minimal Reddit experience
+* View posts
+* View posts by subreddit
+* View comments
+* Search
+* Upvote & Downvote
 
 ## Future Work
-On your computer, create the files needed for your React application. Run your application locally to see what it looks like in the browser.
+Based on your wireframes, start building your application with fake, local data. Remember to build reusable components and to keep your components small.
+
+Other things to keep in mind:
+* Your application should work for all screen sizes
+* You are welcome to use libraries to help you accomplish features
+* You should write unit tests and end-to-end tests where it makes sense
