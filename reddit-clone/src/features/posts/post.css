@@ -1,0 +1,68 @@
+.post-wrapper {
+    display: flex;
+    background-color: hsla(0, 100%, 100%, 0.07);
+    box-shadow:
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    0px 2px 2px 0px hsla(0,0%,0%,0.14), 
+    0px 3px 1px -2px hsla(0,0%,0%,0.12), 
+    0px 1px 5px 0px hsla(0,0%,0%,0.2);
+    max-width: 90%;
+    margin: 20px 10px;
+    border-radius: 12px;
+}
+
+.post-votes-container {
+    width: 10%;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.post-container {
+    width: 90%;
+    text-align: left;
+}
+
+.post-image {
+    max-width: 90%;
+    border-radius: 8px;
+    width: 90%;
+    height: auto;
+}
+
+.post-title {
+    text-align: left;
+    font-family: "Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+.post-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    max-width: 90%;
+    border-top: solid #ebebeb 1px;
+    margin: 15px 0px;
+    padding-top: 10px;
+    color: #ebebeb;
+    font-size: .75em;
+}
+
+h3 {
+    color: #f0f0f0;
+}
+
+.post-votes-value {
+    color: #ebebeb;
+    font-size: 16px;
+}
+
+/* .skeleton {
+    background-color: #ebebeb;
+}
+
+.post-votes-value.skeleton {
+    width: 30px;
+    height: 10px;
+} */
