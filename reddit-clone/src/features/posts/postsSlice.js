@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { collectPostIDs } from '../comments/commentsSlice';
 
 // Define initial state
 const initialState = {
@@ -47,7 +48,7 @@ export const postsSlice = createSlice({
     },
     updatePosts: (state, action) => {
         state.posts = action.payload;
-    }
+    },
   },
   extraReducers: {
     [fetchPosts.pending]: (state, action) => {

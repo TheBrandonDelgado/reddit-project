@@ -1,0 +1,30 @@
+.comment {
+    color: #ebebeb;
+    background-color: hsla(0, 100%, 100%, 0.07);
+    box-shadow:
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    0px 2px 2px 0px hsla(0,0%,0%,0.14), 
+    0px 3px 1px -2px hsla(0,0%,0%,0.12), 
+    0px 1px 5px 0px hsla(0,0%,0%,0.2);
+    max-width: 90%;
+    border-radius: 12px;
+}
+
+.comment-metadata {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 15px;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: gold;
+}
+
+.comment-created-time {
+    font-style: italic;
+}
+
+.comment-body {
+    padding: 0px 0px 20px 15px;
+}

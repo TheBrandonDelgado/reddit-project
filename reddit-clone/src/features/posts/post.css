@@ -17,6 +17,10 @@
     padding-top: 10px;
 }
 
+.post-comments-container {
+    display: flex;
+}
+
 .post-container {
     width: 90%;
     text-align: left;
@@ -57,12 +61,3 @@ h3 {
     color: #ebebeb;
     font-size: 16px;
 }
-
-/* .skeleton {
-    background-color: #ebebeb;
-}
-
-.post-votes-value.skeleton {
-    width: 30px;
-    height: 10px;
-} */

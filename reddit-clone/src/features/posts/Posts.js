@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPosts, fetchPosts } from './postsSlice';
+// import { asyncCollectPostIDs } from '../comments/commentsSlice';
 import Post from './Post';
 
 function Posts() {
@@ -19,7 +20,6 @@ function Posts() {
                     <Post post={post} />
                 ))
             }
-            {console.log(posts)}
         </div>
     );
 }

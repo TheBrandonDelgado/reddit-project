@@ -4,12 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faArrowDown, faComment } from '@fortawesome/free-solid-svg-icons';
 import { upvotePost, downvotePost } from './postsSlice';
 import './post.css';
+import Comments from '../comments/Comments';
 
 function Post({ post }) {
     const dispatch = useDispatch();
     const [ upvote, toggleUpvote ] = useState(null);
     const [ downvote, toggleDownvote ] = useState(null);
     const [ voteScoreColor, setVoteScoreColor ] = useState({color: "#ebebeb"});
+    const [ commentsClicked, toggleCommentsClicked ] = useState(false);
 
     const handleUpvote = (e) => {
         toggleUpvote(!upvote);
@@ -43,6 +45,10 @@ function Post({ post }) {
         }));
     }
 
+    const handleCommentsClicked = () => {
+        toggleCommentsClicked(!commentsClicked);
+    }
+
     function formatVotes(score) {
         if (score >= 1000) {
           const formattedScore = (score / 1000).toFixed(1);
@@ -52,7 +58,7 @@ function Post({ post }) {
         }
     }
 
-    function getPostAge(postAgeUnixTimestamp) {
+    const getPostAge = (postAgeUnixTimestamp) => {
         const now = new Date();
         const postTime = new Date(postAgeUnixTimestamp * 1000);
 
@@ -88,10 +94,11 @@ function Post({ post }) {
                             </span>
                             <span>{getPostAge(post.created)}</span>
                             <span className="post-comments-container">
-                                <FontAwesomeIcon icon={faComment} size="xl" style={{color: "#ebebeb", marginRight: 10}} />
+                                <div onClick={handleCommentsClicked}><FontAwesomeIcon icon={faComment} size="xl" style={commentsClicked ? {color: "gold", marginRight: 10} : {color: "#ebebeb", marginRight: 10}} /></div>
                                 {post.num_comments}
                             </span>
                         </div>
+                        {commentsClicked ? <Comments postId={post.id} /> : <div></div> }
                     </div>
                 </div>
             </div>
