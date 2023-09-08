@@ -14,7 +14,11 @@ function Comments({ postId }) {
 
     if (!commentsByPostID) {
         return (
-            <div>...Loading Comments</div>
+            <div>
+                <Comment />
+                <Comment />
+                <Comment />
+            </div>
         )
     }
 

@@ -1,5 +1,7 @@
 import React from 'react';
 import './comment.css';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 function Comment({ comment }) {
 
@@ -17,6 +19,20 @@ function Comment({ comment }) {
         } else {
             return 'Less than an hour ago';
         }
+    }
+
+    if (!comment) {
+        return (
+            <SkeletonTheme color='#333' highlightColor='#444'>
+                <div className="comment">
+                <div className="comment-metadata">
+                    <p className="comment-author skeleton"><Skeleton /></p>
+                    <p className="comment-created-time skeleton"><Skeleton /></p>
+                </div>
+                <p className="comment-body"><Skeleton count={3} /></p>
+                </div>
+            </SkeletonTheme>
+        )
     }
 
     return (

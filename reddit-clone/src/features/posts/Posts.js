@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectPosts, fetchPosts } from './postsSlice';
-// import { asyncCollectPostIDs } from '../comments/commentsSlice';
+import { selectPosts, fetchPosts, isLoading } from './postsSlice';
 import Post from './Post';
 
 function Posts() {
     const dispatch = useDispatch();
+    const postsLoading = useSelector(isLoading);
     const posts = useSelector(selectPosts);
     const postsWithImage = posts.filter(post => post.url.includes('i.redd.it'));
 
@@ -14,11 +14,17 @@ function Posts() {
     }, [dispatch]);
 
     return (
-        <div>
+        <div style={{width: "100%"}}>
             {
-                postsWithImage.map((post) => (
+                !postsLoading ?
+                posts.map((post) => (
                     <Post post={post} />
-                ))
+                )) :
+                <div>
+                    <Post post={{}}/>
+                    <Post post={{}}/>
+                    <Post post={{}}/>
+                </div>
             }
         </div>
     );

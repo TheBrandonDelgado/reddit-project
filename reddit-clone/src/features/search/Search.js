@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearchTerm, fetchSearchResults, selectSearchTerm } from './searchSlice';
-import searchIcon from '../../images.png'
 import './search.css';
 
 const Search = () => {
@@ -21,7 +20,6 @@ const Search = () => {
                     value={searchTerm}
                     onChange={({target}) => dispatch(setSearchTerm(target.value))}  
                 />
-                <img id="search-icon" src={searchIcon} alt="search icon" />
             </form>
         </div>
     )

@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faArrowDown, faComment } from '@fortawesome/free-solid-svg-icons';
-import { upvotePost, downvotePost } from './postsSlice';
+import { upvotePost, downvotePost, isLoading } from './postsSlice';
 import './post.css';
 import Comments from '../comments/Comments';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 function Post({ post }) {
     const dispatch = useDispatch();
+    const postsLoading = useSelector(isLoading);
     const [ upvote, toggleUpvote ] = useState(null);
     const [ downvote, toggleDownvote ] = useState(null);
     const [ voteScoreColor, setVoteScoreColor ] = useState({color: "#ebebeb"});
@@ -74,6 +77,41 @@ function Post({ post }) {
         }
     }
 
+    if (postsLoading) {
+        return (
+            <SkeletonTheme color='#333' highlightColor='#444'>
+            <article>
+                <div className='card'>
+                    <div className="post-wrapper">
+                        <div className="post-votes-container">
+                            <div onClick={handleUpvote}><FontAwesomeIcon icon={faArrowUp} size="xl" style={!upvote ? {color: "#ebebeb"} : {color: "green"}} /></div>
+                            <p className='post-votes-value' style={voteScoreColor}><Skeleton /></p>
+                            <div onClick={handleDownvote}><FontAwesomeIcon icon={faArrowDown} size="xl" style={!downvote ? {color: "#ebebeb"} : {color: "red"}} /></div>
+                        </div>
+                        <div className="post-container">
+                            <h3 className="post-title skeleton"><Skeleton /></h3>
+                            <div className="post-image-container skeleton">
+                            <Skeleton count={3}/>
+                            </div>
+                            <div className="post-details">
+                                <span className="author-details">
+                                    <span className="author-username skeleton"><Skeleton /></span>
+                                </span>
+                                <span className="skeleton"><Skeleton /></span>
+                                <span className="post-comments-container">
+                                    <div onClick={handleCommentsClicked}><FontAwesomeIcon icon={faComment} size="xl" style={commentsClicked ? {color: "gold", marginRight: 10} : {color: "#ebebeb", marginRight: 10}} /></div>
+                                    <Skeleton />
+                                </span>
+                            </div>
+                            {commentsClicked ? <Comments postId={post.id} /> : <div></div> }
+                        </div>
+                    </div>
+                </div>
+            </article> 
+            </SkeletonTheme>
+        )
+    }
+
     return (
         <article>
             <div className='card'>
@@ -102,7 +140,7 @@ function Post({ post }) {
                     </div>
                 </div>
             </div>
-    </article> 
+        </article> 
     )
 }
 

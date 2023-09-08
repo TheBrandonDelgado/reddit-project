@@ -21,6 +21,19 @@ export const fetchPosts = createAsyncThunk(
     }
 });
 
+export const fetchPostsBySubreddit = createAsyncThunk(
+  'posts/fetchPostsBySubreddit',
+  async (subreddit) => {
+    try {
+      const response = await fetch(`https://www.reddit.com${subreddit.data.url}.json`);
+      const jsonData = await response.json();
+      return jsonData.data.children.map(child => child.data);
+    } catch(error) {
+      throw error;
+    }
+  }
+);
+
 // Create a slice using createSlice
 export const postsSlice = createSlice({
   name: 'posts',
@@ -62,6 +75,19 @@ export const postsSlice = createSlice({
     [fetchPosts.rejected]: (state, action) => {
         state.loading = false;
         state.error = action.error.message;
+    },
+    [fetchPostsBySubreddit.pending]: (state, action) => {
+      state.loading = true;
+      state.error = false;
+    },
+    [fetchPostsBySubreddit.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.error = false;
+      state.posts = action.payload;
+    },
+    [fetchPostsBySubreddit.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = true;
     }
   },
 });

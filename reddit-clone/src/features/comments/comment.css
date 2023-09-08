@@ -8,6 +8,7 @@
     0px 1px 5px 0px hsla(0,0%,0%,0.2);
     max-width: 90%;
     border-radius: 12px;
+    margin: 15px 0px;
 }
 
 .comment-metadata {
@@ -19,6 +20,11 @@
 .comment-author {
     font-weight: bold;
     color: gold;
+    margin: 10px;
+}
+
+.skeleton {
+    min-width: 100px;
 }
 
 .comment-created-time {
@@ -26,5 +32,5 @@
 }
 
 .comment-body {
-    padding: 0px 0px 20px 15px;
+    padding: 0px 15px 20px 15px;
 }
