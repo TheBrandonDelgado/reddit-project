@@ -1,9 +1,6 @@
 # reddit-project
 Reddit Clone to practice React, Redux, Git, and other technologies
 
-## Wireframes
-This project is based off the RedditMinimal example provided by Codecademy at https://reddit-client.netlify.app
-
 ## Technologies Used
 * HTML
 * CSS
@@ -24,9 +21,4 @@ This project is based off the RedditMinimal example provided by Codecademy at ht
 * Upvote & Downvote
 
 ## Future Work
-Based on your wireframes, start building your application with fake, local data. Remember to build reusable components and to keep your components small.
-
-Other things to keep in mind:
-* Your application should work for all screen sizes
-* You are welcome to use libraries to help you accomplish features
-* You should write unit tests and end-to-end tests where it makes sense
+Make web app responsive
