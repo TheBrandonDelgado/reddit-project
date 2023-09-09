@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { updatePosts } from '../posts/postsSlice';
+// import { updatePosts } from '../posts/postsSlice';
 
 export const fetchSearchResults = createAsyncThunk(
     'search/fetchResults',
@@ -32,7 +32,7 @@ export const searchSlice = createSlice({
             state.error = null;
         },
         [fetchSearchResults.fulfilled]: (state, action) => {
-            updatePosts(action.payload)
+            // updatePosts(action.payload)
             state.loading = false;
             state.error = null;
         },

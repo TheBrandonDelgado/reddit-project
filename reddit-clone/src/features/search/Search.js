@@ -1,14 +1,16 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearchTerm, fetchSearchResults, selectSearchTerm } from './searchSlice';
+import { fetchPostsBySearch, fetchPosts } from '../posts/postsSlice';
 import './search.css';
 
 const Search = () => {
     const dispatch = useDispatch();
     const searchTerm = useSelector(selectSearchTerm);
 
-    const handleSearch = () => {
-        dispatch(fetchSearchResults(searchTerm));
+    const handleSearch = (e) => {
+        e.preventDefault();
+        searchTerm !== "" ? dispatch(fetchPostsBySearch(searchTerm)) : dispatch(fetchPosts());
     };
 
     return (

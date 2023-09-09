@@ -8,6 +8,7 @@ function Posts() {
     const postsLoading = useSelector(isLoading);
     const posts = useSelector(selectPosts);
     const postsWithImage = posts.filter(post => post.url.includes('i.redd.it'));
+    const postsToRender = postsWithImage.length < 5 ? posts : postsWithImage;
 
     useEffect(() => {
         dispatch(fetchPosts());
@@ -17,7 +18,7 @@ function Posts() {
         <div style={{width: "100%"}}>
             {
                 !postsLoading ?
-                posts.map((post) => (
+                postsToRender.map((post) => (
                     <Post post={post} />
                 )) :
                 <div>

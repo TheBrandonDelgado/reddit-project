@@ -34,6 +34,20 @@ export const fetchPostsBySubreddit = createAsyncThunk(
   }
 );
 
+export const fetchPostsBySearch = createAsyncThunk(
+  'posts/fetchPostsBySearch',
+  async (searchTerm) => {
+    try {
+      const response = await fetch(`https://www.reddit.com/search.json?q=${searchTerm}`);
+      const jsonData = await response.json();
+      console.log(jsonData);
+      return jsonData.data.children.map(child => child.data);
+    } catch (error) {
+        throw error;
+    }
+  }
+)
+
 // Create a slice using createSlice
 export const postsSlice = createSlice({
   name: 'posts',
@@ -86,6 +100,19 @@ export const postsSlice = createSlice({
       state.posts = action.payload;
     },
     [fetchPostsBySubreddit.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = true;
+    },
+    [fetchPostsBySearch.pending]: (state, action) => {
+      state.loading = true;
+      state.error = false;
+    },
+    [fetchPostsBySearch.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.error = false;
+      state.posts = action.payload;
+    },
+    [fetchPostsBySearch.rejected]: (state, action) => {
       state.loading = false;
       state.error = true;
     }
