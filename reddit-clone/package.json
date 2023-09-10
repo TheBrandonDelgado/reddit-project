@@ -45,12 +45,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "build": {
-    "build": "/opt/build/repo/reddit-clone",
-    "command": "npm run build",
-    "commandOrigin": "ui",
-    "publish": "/opt/build/repo/reddit-clone/build",
-    "publishOrigin": "ui"
   }
 }

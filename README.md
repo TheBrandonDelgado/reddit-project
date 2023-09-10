@@ -12,6 +12,9 @@ Reddit Clone to practice React, Redux, Git, and other technologies
 * Command line and file navigation
 * Wireframing
 
+## Live Site
+View the app in it's current state here: http://reddit-project.brandon-delgado.com
+
 ## Features
 * Minimal Reddit experience
 * View posts
