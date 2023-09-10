@@ -26,9 +26,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -48,5 +46,11 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "http://thebrandondelgado.github.io/reddit-project"
+  "build": {
+    "build": "/opt/build/repo/reddit-clone",
+    "command": "npm run build",
+    "commandOrigin": "ui",
+    "publish": "/opt/build/repo/reddit-clone/build",
+    "publishOrigin": "ui"
+  }
 }
