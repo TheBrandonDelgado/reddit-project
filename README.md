@@ -22,6 +22,3 @@ View the app in it's current state here: http://reddit-project.brandon-delgado.c
 * View comments
 * Search
 * Upvote & Downvote
-
-## Future Work
-Make web app responsive
