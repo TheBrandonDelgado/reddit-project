@@ -33,4 +33,24 @@
 
 .comment-body {
     padding: 0px 15px 20px 15px;
+    overflow-wrap: anywhere;
+}
+
+@media only screen and (max-width: 500px) {
+    .comment {
+        font-size: 12px;
+    }
+
+    .comment-body {
+        margin: auto 5px;
+        padding: 0px 10px 20px 10px;
+    }
+
+    .comment-metadata {
+        margin: 0px 10px 0px 5px;
+    }
+    
+    .skeleton {
+        min-width: 50px;
+    }
 }

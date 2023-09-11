@@ -65,3 +65,25 @@ h3 {
     font-size: 16px;
     padding: 10px;
 }
+
+@media only screen and (max-width: 500px) {
+    .post-wrapper {
+        width: 90%;
+    }
+
+    .post-container {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .post-votes-container {
+        margin: 10px auto;
+    }
+
+    .post-votes-value {
+        padding: 10px 0px;
+        margin: 0px;
+        text-align: center;
+    }
+}

@@ -2,7 +2,6 @@ header {
     display: grid;
     grid-column: 1/-1;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: var(--spacing-2);
     align-content: center;
     background-color: hsla(0, 100%, 100%, 0.07);
 }
@@ -13,4 +12,16 @@ h1 {
 
 #minimal {
     color: gold;
+}
+
+@media screen and (max-width: 500px) {
+    h1 {
+        margin: 20px 0px 0px 0px;
+    }
+
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }

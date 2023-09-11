@@ -19,3 +19,9 @@
     padding: 0px 0px 0px 10px;
     vertical-align: middle;
 }
+
+@media only screen and (max-width: 500px) {
+    #search input {
+        margin: 20px 0px;
+    }
+}

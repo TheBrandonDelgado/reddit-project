@@ -14,7 +14,7 @@
 
 h2 {
     color: #ebebeb;
-    margin: 20px;
+    margin: 20px 40px;
     font-size: 1.5em;
 }
 
@@ -59,4 +59,31 @@ li.subreddit.active {
 
 p {
     margin: auto 10px;
+}
+
+@media only screen and (max-width: 500px) {
+    .subreddits-wrapper {
+        max-width: 90%;
+        height: 160px;
+    }
+
+    h2 {
+        margin-left: 20px;
+    }
+
+    ul {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    li {
+        display: inline-block;
+        width: auto;
+        margin-left: -20px;
+        margin-right: 25px;
+    }
+
+    li.subreddit.active {
+        width: auto;
+    }
 }
