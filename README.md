@@ -2,7 +2,7 @@
 Reddit Clone to practice React, Redux, Git, and other technologies
 
 ## Live Site
-View the app in it's current state here: http://reddit-project.brandon-delgado.com
+View the app in it's current state here: https://reddit-project.brandon-delgado.com
 
 ## Technologies Used
 * HTML
